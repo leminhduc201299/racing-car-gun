@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Vectrosity;
 
 public class CpMain : MonoBehaviour
 {
@@ -16,11 +17,18 @@ public class CpMain : MonoBehaviour
     public static event Action<CpMain> OnLeavingGround = cpMain => { };
     public static event Action<CpMain> OnLanding = cpMain => { };
     
+      private VectorLine border;
+    int borderWidth = 4;
+    private int screenWidth;
     private void Awake()
     {
         rb = GetComponentInChildren<Rigidbody>();
     }
 
+    void Start()
+  {
+    UpdateBorder();
+  }
     private void Update()
     {
         if (_prevGroundedState == false && wheelData.grounded)
@@ -33,5 +41,15 @@ public class CpMain : MonoBehaviour
         }
 
         _prevGroundedState = wheelData.grounded;
+        UpdateBorder();
     }
+
+    
+  private void UpdateBorder()
+  {
+    border.MakeRect(new Vector2(borderWidth / 2, borderWidth / 2),
+                    new Vector2(Screen.width - borderWidth / 2, Screen.height - borderWidth / 2));
+    border.Draw();
+    screenWidth = Screen.width;
+  }
 }
