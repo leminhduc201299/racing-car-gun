@@ -804,7 +804,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4941715128724267061}
   - component: {fileID: 4941715128724267059}
-  - component: {fileID: 1759852639105086858}
   - component: {fileID: 8101896510643395946}
   - component: {fileID: 5709741545825206866}
   - component: {fileID: 4336470543062065256}
@@ -855,20 +854,6 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 1
---- !u!114 &1759852639105086858
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4941715128724267060}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c2745176a014c94b9c859070a50633d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  accelerateAxis: 0
-  brakingAxis: 0
 --- !u!114 &8101896510643395946
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6910,7 +6895,6 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: b81f097ba0ab248499b5744f1239f583, type: 2}
-  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -11666,7 +11650,6 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: e15508a7678c4054b88f582219a09fc0, type: 2}
-  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -16422,7 +16405,6 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: e15508a7678c4054b88f582219a09fc0, type: 2}
-  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
