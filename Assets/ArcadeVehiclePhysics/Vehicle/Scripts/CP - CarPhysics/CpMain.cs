@@ -27,7 +27,7 @@ public class CpMain : MonoBehaviour
 
   void Start()
   {
-    UpdateBorder();
+    // UpdateBorder();
   }
   private void Update()
   {
@@ -41,15 +41,15 @@ public class CpMain : MonoBehaviour
     }
 
     _prevGroundedState = wheelData.grounded;
-    UpdateBorder();
+    // UpdateBorder();
   }
 
 
-  private void UpdateBorder()
-  {
-    border.MakeRect(new Vector2(borderWidth / 2, borderWidth / 2),
-                    new Vector2(Screen.width - borderWidth / 2, Screen.height - borderWidth / 2));
-    border.Draw();
-    screenWidth = Screen.width;
-  }
+  // private void UpdateBorder()
+  // {
+  //   border.MakeRect(new Vector2(borderWidth / 2, borderWidth / 2),
+  //                   new Vector2(Screen.width - borderWidth / 2, Screen.height - borderWidth / 2));
+  //   border.Draw();
+  //   screenWidth = Screen.width;
+  // }
 }
