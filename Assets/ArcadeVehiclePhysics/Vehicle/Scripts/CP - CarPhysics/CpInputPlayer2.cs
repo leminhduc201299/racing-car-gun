@@ -2,24 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CpInputPlayer2 : MonoBehaviour
+public class CpInputPlayer2 : CpInput
 {
-  [Space] public float accelerateAxis;
-  public float brakingAxis;
-
-  private CpMain _cpMain;
-
-  private void Awake()
-  {
-    _cpMain = transform.parent.GetComponent<CpMain>();
-  }
-
-  // Start is called before the first frame update
-  void Start()
-  {
-
-  }
-
   // Update is called once per frame
   void Update()
   {
@@ -28,27 +12,26 @@ public class CpInputPlayer2 : MonoBehaviour
 
   private void HandleInputs()
   {
-    //   accelerateAxis = Input.GetAxis("Vertical");
     //Forward/Reverse
-    if (Input.GetKeyDown(KeyCode.DownArrow))
+    if (
+      Input.GetKeyDown(KeyCode.DownArrow) ||
+      Input.GetKeyDown(KeyCode.UpArrow) ||
+      Input.GetKeyUp(KeyCode.DownArrow) ||
+      Input.GetKeyUp(KeyCode.UpArrow)
+      )
     {
-      _cpMain.input.accelInput = -0.5f;
+      _cpMain.input.accelInput = Input.GetAxis("Vertical");
     }
-    else if (Input.GetKeyDown(KeyCode.UpArrow))
-    {
-      _cpMain.input.accelInput = 0.5f;
-    }
-    else if (Input.GetKeyUp(KeyCode.DownArrow))
-    {
-      _cpMain.input.accelInput = 0;
-    }
-    else if (Input.GetKeyUp(KeyCode.UpArrow))
-    {
-      _cpMain.input.accelInput = 0;
-    }
-
 
     //Steering
-    _cpMain.input.steeringInput = Input.GetAxis("Horizontal");
+    if (
+      Input.GetKeyDown(KeyCode.RightArrow) ||
+      Input.GetKeyDown(KeyCode.LeftArrow) ||
+      Input.GetKeyUp(KeyCode.RightArrow) ||
+      Input.GetKeyUp(KeyCode.LeftArrow)
+    )
+    {
+      _cpMain.input.steeringInput = Input.GetAxis("Horizontal");
+    }
   }
 }
