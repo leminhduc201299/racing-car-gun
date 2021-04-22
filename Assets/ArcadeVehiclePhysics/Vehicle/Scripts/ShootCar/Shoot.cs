@@ -5,9 +5,9 @@ using UnityEngine;
 public class Shoot : MonoBehaviour
 {
   public int damge = 1;
-  public int playerHeath = 10;
+  // public int playerHeath = 10;
 
-  public int currentHealth;
+  // public int currentHealth;
 
   public float fireTime = 0.3f;
   private float lastFireTime = 0;
@@ -15,14 +15,18 @@ public class Shoot : MonoBehaviour
   public GameObject somke;
   public GameObject flare;
   public GameObject GunHead;
-  public HealthBar healthBar;
+  // public HealthBar healthBar;
 
   // Start is called before the first frame update
   void Start()
   {
     lastFireTime = Time.time;
-    currentHealth = playerHeath;
-    healthBar.SetMaxHealth(playerHeath);
+    // currentHealth = playerHeath;
+
+    // if (healthBar != null) {
+    //   healthBar.SetMaxHealth(playerHeath);
+    // }
+    
   }
 
   // Update is called once per frame
@@ -48,11 +52,11 @@ public class Shoot : MonoBehaviour
         GameObject fla = Instantiate(flare, hit.transform.position, hit.transform.rotation) as GameObject;
         Destroy(fla, 0.2f);
 
-        Debug.Log(hit.transform.tag);
+        Debug.Log(hit.transform.position);
         if (hit.transform.tag.Equals("Player"))
         {
           Debug.Log("********************************");
-          // hit.transform.gameObject.GetComponent<ZombieController>().ShootPlayer1(damge);
+          hit.transform.gameObject.GetComponent<PlayerController>().TakeDamage(damge);
         }
       }
 

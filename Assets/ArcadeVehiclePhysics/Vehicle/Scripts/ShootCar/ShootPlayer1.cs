@@ -13,16 +13,5 @@ public class ShootPlayer1 : Shoot
       Fire();
     }
 
-    if (Input.GetKeyDown(KeyCode.V))
-    {
-      TakeDamage(1);
-    }
-  }
-
-  void TakeDamage(int damage)
-  {
-    currentHealth -= damage;
-
-    healthBar.SetHealth(currentHealth);
   }
 }
