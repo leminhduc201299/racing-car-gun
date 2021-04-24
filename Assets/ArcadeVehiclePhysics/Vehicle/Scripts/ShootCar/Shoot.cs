@@ -35,7 +35,7 @@ public class Shoot : MonoBehaviour
 
   }
 
-  public void Fire(string player)
+  public void Fire()
   {
 
     if (Time.time > lastFireTime + fireTime)
@@ -56,7 +56,7 @@ public class Shoot : MonoBehaviour
         if (hit.transform.tag.Equals("Player"))
         {
           Debug.Log("********************************");
-          hit.transform.gameObject.GetComponent<PlayerController>().TakeDamage(player, damge);
+          hit.transform.gameObject.GetComponent<PlayerController>().TakeDamage(damge);
         }
       }
 

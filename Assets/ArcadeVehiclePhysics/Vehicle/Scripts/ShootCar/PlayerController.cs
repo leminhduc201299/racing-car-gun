@@ -9,9 +9,7 @@ public class PlayerController : MonoBehaviour
     public HealthBar healthBar;
     public int currentHealth;
 
-    private GameObject gameController;
-
-    public void TakeDamage(string player, int damage)
+    public void TakeDamage(int damage)
     {
         currentHealth -= damage;
 
@@ -22,18 +20,13 @@ public class PlayerController : MonoBehaviour
             // Destroy
             Debug.Log("Destroy Destroy Destroy Destroy Destroy");
             Destroy(transform.parent.gameObject);
-
-            gameController.GetComponent<GameController>().EndGame(player);
+            Time.timeScale = 0;
         }
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        if (gameController == null) {
-            gameController = GameObject.FindGameObjectWithTag("GameController");
-        }
-
         currentHealth = playerHeath;
 
         if (healthBar != null)
