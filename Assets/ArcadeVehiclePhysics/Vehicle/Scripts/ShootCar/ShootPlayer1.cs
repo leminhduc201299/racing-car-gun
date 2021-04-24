@@ -10,7 +10,7 @@ public class ShootPlayer1 : Shoot
     // 
     if (Input.GetKeyDown(KeyCode.H))
     {
-      Fire();
+      Fire("Player 01");
     }
 
   }

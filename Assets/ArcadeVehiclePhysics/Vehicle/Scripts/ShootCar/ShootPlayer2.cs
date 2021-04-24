@@ -10,7 +10,7 @@ public class ShootPlayer2 : Shoot
     // Khi nhan chuot trai de ban
     if (Input.GetMouseButton(0))
     {
-      Fire();
+      Fire("Player 02");
     }
   }
 }
