@@ -8,7 +8,7 @@ public class ShootPlayer1 : Shoot
   void Update()
   {
     // 
-    if (Input.GetKeyDown(KeyCode.H))
+    if (Input.GetMouseButton(0))
     {
       Fire("Player 01");
     }
