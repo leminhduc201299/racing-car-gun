@@ -8,9 +8,9 @@ public class ShootPlayer2 : Shoot
   void Update()
   {
     // Khi nhan chuot trai de ban
-    if (Input.GetKeyDown(KeyCode.H))
+    if (Input.GetMouseButton(0))
     {
-      Fire();
+      Fire("Player 02");
     }
   }
 }

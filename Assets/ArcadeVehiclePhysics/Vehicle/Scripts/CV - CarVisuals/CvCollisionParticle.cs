@@ -35,7 +35,7 @@ public class CvCollisionParticle : MonoBehaviour
 
     public void PlayCollisionParticles(Collision collision)
     {
-        if (currentDeadTime <= 0)
+        if (currentDeadTime <= 0 && collisionDustParticles)
         {
             float impulseMag = collision.impulse.magnitude;
             var mainModule = collisionDustParticles.main;
