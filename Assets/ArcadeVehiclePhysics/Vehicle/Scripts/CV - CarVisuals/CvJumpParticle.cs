@@ -25,7 +25,7 @@ public class CvJumpParticle : MonoBehaviour
 
     public void PlayJumpParticles(CpMain car)
     {
-        if (currentDeadTime <= 0)
+        if (currentDeadTime <= 0 && jumpDustParticles)
         {
             jumpDustParticles.transform.localRotation = Quaternion.Euler(car.averageColliderSurfaceNormal) * Quaternion.Euler(90,0,0);
             jumpDustParticles.Play();
